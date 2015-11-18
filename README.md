@@ -62,6 +62,14 @@ function.
             m
     }
 
+usage:
+> a <- makeVector(1:8)
+> cachemean(a)
+[1] 4.5
+> cachemean(a)
+getting cached data
+[1] 4.5
+
 ### Assignment: Caching the Inverse of a Matrix
 
 Matrix inversion is usually a costly computation and there may be some
@@ -83,6 +91,24 @@ Computing the inverse of a square matrix can be done with the `solve`
 function in R. For example, if `X` is a square invertible matrix, then
 `solve(X)` returns its inverse.
 
+usage:
+> source("cachematrix.R")
+> c=rbind(c(1,-1/4), c(-1/4,1))
+> c
+      [,1]  [,2]
+[1,]  1.00 -0.25
+[2,] -0.25  1.00
+> b <- makeCacheMatrix(c)
+> cacheSolve(b)
+          [,1]      [,2]
+[1,] 1.0666667 0.2666667
+[2,] 0.2666667 1.0666667
+> cacheSolve(b)
+getting cached data
+          [,1]      [,2]
+[1,] 1.0666667 0.2666667
+[2,] 0.2666667 1.0666667
+
 For this assignment, assume that the matrix supplied is always
 invertible.
 
@@ -103,3 +129,4 @@ In order to complete this assignment, you must do the following:
 ### Grading
 
 This assignment will be graded via peer assessment.
+
