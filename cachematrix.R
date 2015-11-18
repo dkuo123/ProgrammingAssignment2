@@ -6,8 +6,10 @@
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
-    x <<- y
-    m <<- NULL
+    if(!identical(x,y)) {
+      x <<- y
+      m <<- NULL
+    }
   }
   get <- function() x
   setInverse <- function(inverse) m <<- inverse

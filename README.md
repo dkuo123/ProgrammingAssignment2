@@ -109,6 +109,13 @@ getting cached data
 [1,] 1.0666667 0.2666667
 [2,] 0.2666667 1.0666667
 
+> b$set(c)
+> cacheSolve(b)
+getting cached data
+          [,1]      [,2]
+[1,] 1.0666667 0.2666667
+[2,] 0.2666667 1.0666667
+
 For this assignment, assume that the matrix supplied is always
 invertible.
 
